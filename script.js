@@ -206,6 +206,7 @@ async function processUserMessage(userMessage) {
                     tipo: pecaConfirmada.tipo,
                     precoMin: pecaConfirmada.precoMin,
                     precoMax: pecaConfirmada.precoMax,
+                    link: pecaConfirmada.link || '',
                     localizacao: CONVERSATION_STATE.location // Usa a localização do usuário
                 };
 
