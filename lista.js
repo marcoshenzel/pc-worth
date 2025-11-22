@@ -88,7 +88,7 @@ async function carregarPecas() {
             <td><strong>${revendaEstimada}</strong></td>
             <td><a href="${searchUrl}" target="_blank" rel="noopener noreferrer">Buscar Preço</a></td>
             <td class="actions">
-                <button onclick="editarPeca('${peca.id}', '${peca.nome}', '${peca.tipo}', ${peca.precoMin}, ${peca.precoMax})">Editar</button>
+                <button onclick="editarPeca('${peca.id}')">Editar</button>
                 <button class="delete" onclick="excluirPeca('${peca.id}')">Excluir</button>
             </td>
         `;
@@ -105,16 +105,19 @@ document.getElementById('peca-form').addEventListener('submit', async function(e
     const tipo = document.getElementById('tipo').value;
     const precoMin = parseFloat(document.getElementById('precoMin').value) || 0;
     const precoMax = parseFloat(document.getElementById('precoMax').value) || 0;
+    const link = document.getElementById('link').value;
     
     // 1. MODO DE EDIÇÃO
     if (id) { 
         const index = listaPecasAtual.findIndex(p => p.id === id);
         if (index !== -1) {
-            listaPecasAtual[index].nome = nome;
-            listaPecasAtual[index].tipo = tipo;
-            listaPecasAtual[index].precoMin = precoMin;
-            listaPecasAtual[index].precoMax = precoMax;
-            // Mantém a localização original
+            listaPecasAtual[index] = {
+                ...listaPecasAtual[index], // Mantém dados existentes como localização
+                nome,
+                tipo,
+                precoMin,
+                precoMax,
+                link };
         }
 
     // 2. MODO DE ADIÇÃO
@@ -127,6 +130,7 @@ document.getElementById('peca-form').addEventListener('submit', async function(e
             tipo, 
             precoMin, 
             precoMax,
+            link,
             localizacao: 'Manual (Estático)'
         };
         listaPecasAtual.push(novaPeca);
@@ -140,12 +144,16 @@ document.getElementById('peca-form').addEventListener('submit', async function(e
 });
 
 // Função para preencher o formulário no modo de Edição (Permanece igual)
-function editarPeca(id, nome, tipo, precoMin, precoMax) {
-    document.getElementById('peca-id').value = id;
-    document.getElementById('nome').value = nome;
-    document.getElementById('tipo').value = tipo;
-    document.getElementById('precoMin').value = precoMin;
-    document.getElementById('precoMax').value = precoMax;
+function editarPeca(id) {
+    const peca = listaPecasAtual.find(p => p.id === id);
+    if (!peca) return; // Se a peça não for encontrada, não faz nada
+
+    document.getElementById('peca-id').value = peca.id;
+    document.getElementById('nome').value = peca.nome;
+    document.getElementById('tipo').value = peca.tipo;
+    document.getElementById('precoMin').value = peca.precoMin;
+    document.getElementById('precoMax').value = peca.precoMax;
+    document.getElementById('link').value = peca.link || ''; // Preenche o campo de link
 
     document.getElementById('submit-button').textContent = 'Salvar Edição';
     document.getElementById('cancel-edit').style.display = 'inline';
