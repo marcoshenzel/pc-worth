@@ -1,0 +1,130 @@
+body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f9; }
+.container { max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+h1, h2 { color: #333; }
+form { margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 4px; display: grid; grid-template-columns: repeat(5, 1fr) auto; gap: 10px; align-items: center; }
+input[type="text"], input[type="number"] { padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+button { padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer; background-color: #007bff; color: white; transition: background-color 0.3s; }
+button:hover { background-color: #0056b3; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+th { background-color: #f2f2f2; }
+.total-summary { margin-top: 20px; padding: 15px; border: 2px solid #28a745; border-radius: 4px; background-color: #e6ffed; }
+.actions button { margin-right: 5px; background-color: #ffc107; color: #333; }
+.actions button.delete { background-color: #dc3545; color: white; }
+.chat-links { margin-top: 10px; padding-top: 8px; border-top: 1px solid #ccc; font-size: 0.85em; text-align: left; }
+.chat-links ul { list-style: none; padding-left: 0; }
+.chat-links li { margin-bottom: 5px; }
+
+/* Estilos do formulário de peças */
+#cancel-edit {
+    display: none;
+    background-color: #6c757d;
+}
+
+/* Estilos das ações da lista */
+.list-actions {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+#print-button {
+    background-color: #17a2b8;
+    margin-right: 10px;
+}
+
+#clear-button {
+    background-color: #dc3545;
+}
+
+/* Estilos do Chat CRUD */
+#chat-crud-container {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 350px;
+    height: 500px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+#chat-crud-header {
+    padding: 10px;
+    background-color: #dc3545; /* Cor de gerenciamento (Vermelho) */
+    color: white;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    cursor: pointer;
+}
+
+#chat-crud-messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #eee;
+    background-color: #f9f9f9;
+}
+
+#chat-crud-form {
+    padding: 10px;
+    display: flex;
+}
+
+#chat-crud-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+#chat-crud-button {
+    padding: 10px 15px;
+    border-radius: 0 4px 4px 0;
+    background-color: #dc3545;
+}
+
+#chat-crud-toggle {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 15px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1001;
+    display: none;
+}
+
+/* --- ESTILOS PARA IMPRESSÃO (REVISADOS) --- */
+@media print {
+    body { padding: 1cm; background-color: #fff; font-size: 10pt; color: #000; }
+    .container { box-shadow: none; border: none; padding: 0; width: 100%; max-width: 100%; }
+    
+    /* Esconde elementos não desejados */
+    #peca-form, h2:has(+ #peca-form), .list-actions, .actions button, #chat-crud-container, #chat-crud-toggle, h1, p { display: none !important; }
+
+    /* Mantém títulos relevantes e ajusta margens */
+    h2, h3 { margin-top: 0.5cm; margin-bottom: 0.3cm; font-size: 12pt; page-break-after: avoid; }
+    
+    /* Ajustes na Tabela */
+    table { width: 100%; border-collapse: collapse; margin-top: 0; page-break-inside: auto; }
+    thead { display: table-header-group; }
+    tbody tr { page-break-inside: avoid; page-break-after: auto; }
+    th, td { border: 1px solid #ccc; padding: 4px 6px; word-wrap: break-word; }
+    th { background-color: #eee !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    
+    /* Estilos de Links */
+    a { color: #000; text-decoration: underline; }
+
+    .total-summary { margin-top: 1cm; border: 1px solid #ccc; background-color: #f9f9f9 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-before: always; }
+    .total-summary p { display: block !important; margin: 5px 0; }
+}

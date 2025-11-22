@@ -1,0 +1,722 @@
+[
+  {
+    "id": 1,
+    "nome": "Ryzen 5 5600X",
+    "tipo": "CPU",
+    "precoMin": 800,
+    "precoMax": 1200,
+    "localizacao": "São Paulo/SP",
+    "link": "https://www.amd.com/pt/products/cpu/amd-ryzen-5-5600x"
+  },
+  {
+    "id": 2,
+    "nome": "GeForce RTX 3060",
+    "tipo": "GPU",
+    "precoMin": 1800,
+    "precoMax": 2500,
+    "localizacao": "Rio de Janeiro/RJ",
+    "link": "https://www.nvidia.com/pt-br/geforce/graphics-cards/30-series/rtx-3060-3060ti/"
+  },
+  {
+    "id": 3,
+    "nome": "Kingston Fury 16GB (2x8GB) DDR4 3200MHz",
+    "tipo": "RAM",
+    "precoMin": 350,
+    "precoMax": 500,
+    "localizacao": "Belo Horizonte/MG",
+    "link": "https://www.kingston.com/br/memory/gaming/kingston-fury-beast-ddr4-memory"
+  },
+  {
+    "id": 4,
+    "nome": "SSD NVMe 1TB Kingston NV2",
+    "tipo": "Armazenamento",
+    "precoMin": 300,
+    "precoMax": 450,
+    "localizacao": "Curitiba/PR",
+    "link": "https://www.kingston.com/br/ssd/nv2-nvme-pcie-ssd"
+  },
+  {
+    "id": 5,
+    "nome": "Placa-Mãe B550M Aorus Elite",
+    "tipo": "Placa-Mãe",
+    "precoMin": 700,
+    "precoMax": 950,
+    "localizacao": "Porto Alegre/RS",
+    "link": "https://www.gigabyte.com/br/Motherboard/B550M-AORUS-ELITE-rev-1x"
+  },
+  {
+    "id": 6,
+    "nome": "Fonte Corsair CV650 650W 80 Plus Bronze",
+    "tipo": "Fonte",
+    "precoMin": 400,
+    "precoMax": 550,
+    "localizacao": "Salvador/BA",
+    "link": "https://www.corsair.com/br/pt/p/psu/cp-9020236-na/cv-series-cv650-650-watt-80-plus-bronze-certified-psu-cp-9020236-na"
+  },
+  {
+    "id": 7,
+    "nome": "Intel Core i7-14700K",
+    "tipo": "CPU",
+    "precoMin": 2500,
+    "precoMax": 2899.9,
+    "localizacao": "São Paulo/SP",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/236168/intel-core-i714700k-processor-33m-cache-up-to-5-50-ghz/specifications.html"
+  },
+  {
+    "id": 8,
+    "nome": "AMD Ryzen 9 7950X3D",
+    "tipo": "CPU",
+    "precoMin": 3800,
+    "precoMax": 4500,
+    "localizacao": "Rio de Janeiro/RJ",
+    "link": "https://www.amd.com/en/products/cpu/amd-ryzen-9-7950x3d"
+  },
+  {
+    "id": 9,
+    "nome": "Intel Core i3-13100F",
+    "tipo": "CPU",
+    "precoMin": 750,
+    "precoMax": 900,
+    "localizacao": "Curitiba/PR",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/230472/intel-core-i313100f-processor/specifications.html"
+  },
+  {
+    "id": 10,
+    "nome": "AMD Ryzen 5 7600",
+    "tipo": "CPU",
+    "precoMin": 1250,
+    "precoMax": 1499,
+    "localizacao": "Porto Alegre/RS",
+    "link": "https://www.amd.com/en/products/cpu/amd-ryzen-5-7600"
+  },
+  {
+    "id": 11,
+    "nome": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "tipo": "GPU",
+    "precoMin": 6500,
+    "precoMax": 7999,
+    "localizacao": "Salvador/BA",
+    "link": "https://www.nvidia.com/pt-br/geforce/graphics-cards/40-series/rtx-4070-ti-super/"
+  },
+  {
+    "id": 12,
+    "nome": "AMD Radeon RX 7800 XT",
+    "tipo": "GPU",
+    "precoMin": 3500,
+    "precoMax": 4200,
+    "localizacao": "Brasília/DF",
+    "link": "https://www.amd.com/en/products/graphics/amd-radeon-rx-7800-xt"
+  },
+  {
+    "id": 13,
+    "nome": "NVIDIA GeForce RTX 4090",
+    "tipo": "GPU",
+    "precoMin": 12000,
+    "precoMax": 15500,
+    "localizacao": "São Paulo/SP",
+    "link": "https://www.nvidia.com/pt-br/geforce/graphics-cards/40-series/rtx-4090/"
+  },
+  {
+    "id": 14,
+    "nome": "AMD Radeon RX 6600",
+    "tipo": "GPU",
+    "precoMin": 1100,
+    "precoMax": 1400,
+    "localizacao": "Recife/PE",
+    "link": "https://www.amd.com/en/products/graphics/amd-radeon-rx-6600"
+  },
+  {
+    "id": 15,
+    "nome": "NVIDIA GeForce RTX 4060",
+    "tipo": "GPU",
+    "precoMin": 2100,
+    "precoMax": 2500,
+    "localizacao": "Fortaleza/CE",
+    "link": "https://www.nvidia.com/pt-br/geforce/graphics-cards/40-series/rtx-4060/"
+  },
+  {
+    "id": 16,
+    "nome": "G.Skill Trident Z5 RGB 32GB (2x16GB) DDR5 6000MHz",
+    "tipo": "RAM",
+    "precoMin": 980,
+    "precoMax": 1250,
+    "localizacao": "São Paulo/SP",
+    "link": "https://www.gskill.com/product/165/374/1665636043/Trident-Z5-RGB-DDR5-6000MHz-CL30-32GB-(2x16GB)"
+  },
+  {
+    "id": 17,
+    "nome": "Corsair Vengeance LPX 32GB (2x16GB) DDR4 3600MHz",
+    "tipo": "RAM",
+    "precoMin": 650,
+    "precoMax": 800,
+    "localizacao": "Rio de Janeiro/RJ",
+    "link": "https://www.corsair.com/us/en/p/memory/cmk32gx4m2d3600c18/vengeance-lpx-32gb-2x16gb-ddr4-dram-3600mhz-c18-memory-kit-black-cmk32gx4m2d3600c18"
+  },
+  {
+    "id": 18,
+    "nome": "TeamGroup T-Force Vulcan 8GB DDR4 2666MHz",
+    "tipo": "RAM",
+    "precoMin": 180,
+    "precoMax": 250,
+    "localizacao": "Belo Horizonte/MG",
+    "link": "https://www.teamgroupinc.com/en/product/vulcan-z-ddr4"
+  },
+  {
+    "id": 19,
+    "nome": "Crucial P5 Plus 2TB NVMe SSD PCIe 4.0",
+    "tipo": "Armazenamento",
+    "precoMin": 900,
+    "precoMax": 1150,
+    "localizacao": "Curitiba/PR",
+    "link": "https://www.crucial.com/ssd/p5-plus/ct2000p5pssd8"
+  },
+  {
+    "id": 20,
+    "nome": "Western Digital Blue 4TB SATA HDD 5400 RPM",
+    "tipo": "Armazenamento",
+    "precoMin": 550,
+    "precoMax": 700,
+    "localizacao": "Porto Alegre/RS",
+    "link": "https://www.westerndigital.com/products/internal-drives/wd-blue-desktop-sata-hdd"
+  },
+  {
+    "id": 21,
+    "nome": "Samsung 870 EVO 500GB SATA SSD",
+    "tipo": "Armazenamento",
+    "precoMin": 300,
+    "precoMax": 450,
+    "localizacao": "Belo Horizonte/MG",
+    "link": "https://www.samsung.com/us/computing/memory-storage/solid-state-drives/ssd-870-evo-sata-3-500gb-mz-77e500b-am/"
+  },
+  {
+    "id": 22,
+    "nome": "Placa-Mãe Asus ROG MAXIMUS Z790 HERO",
+    "tipo": "Placa-Mãe",
+    "precoMin": 4000,
+    "precoMax": 5500,
+    "localizacao": "Salvador/BA",
+    "link": "https://rog.asus.com/motherboards/rog-maximus/rog-maximus-z790-hero-model/"
+  },
+  {
+    "id": 23,
+    "nome": "Placa-Mãe MSI MAG B650 Tomahawk WiFi",
+    "tipo": "Placa-Mãe",
+    "precoMin": 1500,
+    "precoMax": 1900,
+    "localizacao": "Brasília/DF",
+    "link": "https://www.msi.com/Motherboard/MAG-B650-TOMAHAWK-WIFI"
+  },
+  {
+    "id": 24,
+    "nome": "Placa-Mãe Gigabyte H610M S2H DDR4",
+    "tipo": "Placa-Mãe",
+    "precoMin": 450,
+    "precoMax": 600,
+    "localizacao": "Recife/PE",
+    "link": "https://www.gigabyte.com/br/Motherboard/H610M-S2H-DDR4-rev-10"
+  },
+  {
+    "id": 25,
+    "nome": "Fonte Cooler Master MWE Gold V2 850W 80 Plus Gold",
+    "tipo": "Fonte",
+    "precoMin": 750,
+    "precoMax": 950,
+    "localizacao": "Fortaleza/CE",
+    "link": "https://www.coolermaster.com/br/pt-br/product/power/mwe-gold/mwe-gold-850-v2-full-modular/"
+  },
+  {
+    "id": 26,
+    "nome": "Fonte XPG Core Reactor 1000W 80 Plus Gold",
+    "tipo": "Fonte",
+    "precoMin": 1100,
+    "precoMax": 1350,
+    "localizacao": "São Paulo/SP",
+    "link": "https://www.xpg.com/us/xpg/pc-components-core-reactor-power-supply"
+  },
+  {
+    "id": 27,
+    "nome": "Water Cooler NZXT Kraken 360 RGB",
+    "tipo": "Refrigeração",
+    "precoMin": 1200,
+    "precoMax": 1500,
+    "localizacao": "Rio de Janeiro/RJ",
+    "link": "https://nzxt.com/product/kraken-360-rgb"
+  },
+  {
+    "id": 28,
+    "nome": "Cooler Noctua NH-D15 chromax.black",
+    "tipo": "Refrigeração",
+    "precoMin": 700,
+    "precoMax": 900,
+    "localizacao": "Curitiba/PR",
+    "link": "https://noctua.at/en/nh-d15-chromax-black"
+  },
+  {
+    "id": 29,
+    "nome": "Gabinete Lian Li Lancool 216 RGB",
+    "tipo": "Gabinete",
+    "precoMin": 600,
+    "precoMax": 850,
+    "localizacao": "Porto Alegre/RS",
+    "link": "https://lian-li.com/product/lancool-216/"
+  },
+  {
+    "id": 30,
+    "nome": "Placa-Mãe ASRock X670E Taichi",
+    "tipo": "Placa-Mãe",
+    "precoMin": 3500,
+    "precoMax": 4800,
+    "localizacao": "Salvador/BA",
+    "link": "https://www.asrock.com/mb/AMD/X670E%20Taichi/index.asp"
+  },
+  {
+    "id": 31,
+    "nome": "Intel Core i5-12400",
+    "tipo": "CPU",
+    "precoMin": 950,
+    "precoMax": 1100,
+    "localizacao": "Belo Horizonte/MG",
+    "link": "https://www.intel.com.br/content/www/br/pt/products/sku/134586/intel-core-i512400-processor/specifications.html"
+  },
+  {
+    "id": 32,
+    "nome": "Intel Xeon E5-2670 V3 (Usado)",
+    "tipo": "CPU",
+    "precoMin": 150,
+    "precoMax": 250,
+    "localizacao": "São Paulo/SP",
+    "link": "https://www.intel.com.br/content/www/br/pt/products/sku/81709/intel-xeon-processor-e52670-v3-30m-cache-2-30-ghz/specifications.html"
+  },
+  {
+    "id": 33,
+    "nome": "Intel Xeon E5-2689 (Usado)",
+    "tipo": "CPU",
+    "precoMin": 120,
+    "precoMax": 200,
+    "localizacao": "Curitiba/PR",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/64595/intel-xeon-processor-e52689-20m-cache-2-60-ghz-8-00-gts-intel-qpi/specifications.html"
+  },
+  {
+    "id": 34,
+    "nome": "Intel Xeon E3-1230 V2 (Usado)",
+    "tipo": "CPU",
+    "precoMin": 180,
+    "precoMax": 280,
+    "localizacao": "Belo Horizonte/MG",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/65732/intel-xeon-processor-e31230-v2-8m-cache-3-30-ghz/specifications.html"
+  },
+  {
+    "id": 35,
+    "nome": "Memória RAM 8GB DDR3 1600MHz (Várias Marcas)",
+    "tipo": "RAM",
+    "precoMin": 70,
+    "precoMax": 120,
+    "localizacao": "Rio de Janeiro/RJ",
+    "link": "https://pt.wikipedia.org/wiki/DDR3_SDRAM"
+  },
+  {
+    "id": 36,
+    "nome": "Memória RAM 4GB DDR3 1333MHz (Várias Marcas)",
+    "tipo": "RAM",
+    "precoMin": 40,
+    "precoMax": 80,
+    "localizacao": "Salvador/BA",
+    "link": "https://pt.wikipedia.org/wiki/DDR3_SDRAM"
+  },
+  {
+    "id": 37,
+    "nome": "Kingston HyperX Fury 8GB DDR4 2666MHz",
+    "tipo": "RAM",
+    "precoMin": 180,
+    "precoMax": 250,
+    "localizacao": "Porto Alegre/RS",
+    "link": "https://www.kingston.com/br/memory/gaming/kingston-fury-beast-ddr4-memory"
+  },
+  {
+    "id": 38,
+    "nome": "Placa-Mãe X99 (LGA 2011-3) (Várias Marcas)",
+    "tipo": "Placa-Mãe",
+    "precoMin": 350,
+    "precoMax": 550,
+    "localizacao": "São Paulo/SP",
+    "link": "https://en.wikipedia.org/wiki/Intel_X99"
+  },
+  {
+    "id": 39,
+    "nome": "Placa-Mãe X79 (LGA 2011) (Várias Marcas)",
+    "tipo": "Placa-Mãe",
+    "precoMin": 250,
+    "precoMax": 400,
+    "localizacao": "Curitiba/PR",
+    "link": "https://en.wikipedia.org/wiki/Intel_X79"
+  },
+  {
+    "id": 40,
+    "nome": "AMD Radeon RX 580 8GB (Usada)",
+    "tipo": "GPU",
+    "precoMin": 400,
+    "precoMax": 600,
+    "localizacao": "Belo Horizonte/MG",
+    "link": "https://www.amd.com/en/products/graphics/radeon-rx-580"
+  },
+  {
+    "id": 41,
+    "nome": "NVIDIA GeForce GTX 1050 Ti 4GB",
+    "tipo": "GPU",
+    "precoMin": 500,
+    "precoMax": 750,
+    "localizacao": "Rio de Janeiro/RJ",
+    "link": "https://www.nvidia.com/pt-br/geforce/graphics-cards/geforce-gtx-1050-ti/"
+  },
+  {
+    "id": 42,
+    "nome": "SSD Sata 2.5 240GB (Várias Marcas)",
+    "tipo": "Armazenamento",
+    "precoMin": 120,
+    "precoMax": 180,
+    "localizacao": "Salvador/BA",
+    "link": "https://pt.wikipedia.org/wiki/Unidade_de_estado_s%C3%B3lido"
+  },
+  {
+    "id": 43,
+    "nome": "Fonte 500W 80 Plus Bronze (Várias Marcas)",
+    "tipo": "Fonte",
+    "precoMin": 250,
+    "precoMax": 350,
+    "localizacao": "Porto Alegre/RS",
+    "link": "https://pt.wikipedia.org/wiki/80_Plus"
+  },
+  {
+    "id": 44,
+    "nome": "Intel Xeon E5-2650 V2 (Usado)",
+    "tipo": "CPU",
+    "precoMin": 100,
+    "precoMax": 160,
+    "localizacao": "São Paulo/SP",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/75269/intel-xeon-processor-e52650-v2-20m-cache-2-60-ghz/specifications.html"
+  },
+  {
+    "id": 45,
+    "nome": "Memória RAM 16GB (2x8GB) DDR3 1866MHz",
+    "tipo": "RAM",
+    "precoMin": 150,
+    "precoMax": 220,
+    "localizacao": "Curitiba/PR",
+    "link": "https://pt.wikipedia.org/wiki/DDR3_SDRAM"
+  },
+  {
+    "id": 46,
+    "nome": "Gabinete Gamer Simples (Várias Marcas)",
+    "tipo": "Gabinete",
+    "precoMin": 150,
+    "precoMax": 250,
+    "localizacao": "Belo Horizonte/MG",
+    "link": "https://pt.wikipedia.org/wiki/Gabinete_(inform%C3%A1tica)"
+  },
+  {
+    "id": 47,
+    "nome": "Intel Core i5-10400F",
+    "tipo": "CPU",
+    "precoMin": 600,
+    "precoMax": 750,
+    "localizacao": "Rio de Janeiro/RJ",
+    "link": "https://www.intel.com.br/content/www/br/pt/products/sku/199278/intel-core-i510400f-processor-12m-cache-up-to-4-30-ghz/specifications.html"
+  },
+  {
+    "id": 48,
+    "nome": "AMD Ryzen 3 3200G",
+    "tipo": "CPU",
+    "precoMin": 450,
+    "precoMax": 600,
+    "localizacao": "Salvador/BA",
+    "link": "https://www.amd.com/pt/products/apu/amd-ryzen-3-3200g"
+  },
+  {
+    "id": 49,
+    "nome": "Placa-Mãe A320M (AM4)",
+    "tipo": "Placa-Mãe",
+    "precoMin": 300,
+    "precoMax": 450,
+    "localizacao": "Porto Alegre/RS",
+    "link": "https://www.amd.com/pt/chipsets/a320"
+  },
+  {
+    "id": 50,
+    "nome": "NVIDIA GeForce GT 1030 2GB GDDR5",
+    "tipo": "GPU",
+    "precoMin": 400,
+    "precoMax": 550,
+    "localizacao": "São Paulo/SP",
+    "link": "https://www.nvidia.com/pt-br/geforce/graphics-cards/geforce-gt-1030/"
+  },
+  {
+    "id": 51,
+    "nome": "HD 1TB Sata 3.5 7200RPM (Várias Marcas)",
+    "tipo": "Armazenamento",
+    "precoMin": 200,
+    "precoMax": 300,
+    "localizacao": "Curitiba/PR",
+    "link": "https://pt.wikipedia.org/wiki/Disco_r%C3%ADgido"
+  },
+  {
+    "id": 52,
+    "nome": "Intel Xeon E5-2697 V2 (Usado)",
+    "tipo": "CPU",
+    "precoMin": 250,
+    "precoMax": 400,
+    "localizacao": "Belo Horizonte/MG",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/75283/intel-xeon-processor-e52697-v2-30m-cache-2-70-ghz/specifications.html"
+  },
+  {
+    "id": 53,
+    "nome": "Corsair Vengeance RGB Pro 16GB (2x8GB) DDR4 3200MHz",
+    "tipo": "RAM",
+    "precoMin": 400,
+    "precoMax": 550,
+    "localizacao": "Rio de Janeiro/RJ",
+    "link": "https://www.corsair.com/br/pt/p/memory/cmw16gx4m2c3200c16/vengeance-rgb-pro-16gb-2x8gb-ddr4-dram-3200mhz-c16-memory-kit-black-cmw16gx4m2c3200c16"
+  },
+  {
+    "id": 54,
+    "nome": "Placa-Mãe B450M (AM4)",
+    "tipo": "Placa-Mãe",
+    "precoMin": 450,
+    "precoMax": 650,
+    "localizacao": "Salvador/BA",
+    "link": "https://www.amd.com/pt/chipsets/b450"
+  },
+  {
+    "id": 55,
+    "nome": "AMD Radeon RX 6400",
+    "tipo": "GPU",
+    "precoMin": 800,
+    "precoMax": 1000,
+    "localizacao": "Porto Alegre/RS",
+    "link": "https://www.amd.com/en/products/graphics/amd-radeon-rx-6400"
+  },
+  {
+    "id": 56,
+    "nome": "SSD NVMe 500GB (Várias Marcas)",
+    "tipo": "Armazenamento",
+    "precoMin": 200,
+    "precoMax": 300,
+    "localizacao": "São Paulo/SP",
+    "link": "https://pt.wikipedia.org/wiki/NVM_Express"
+  },
+  {
+    "id": 57,
+    "nome": "Fonte 750W 80 Plus Bronze (Várias Marcas)",
+    "tipo": "Fonte",
+    "precoMin": 450,
+    "precoMax": 600,
+    "localizacao": "Curitiba/PR",
+    "link": "https://pt.wikipedia.org/wiki/80_Plus"
+  },
+  {
+    "id": 58,
+    "nome": "Intel Xeon W-2123 (Usado)",
+    "tipo": "CPU",
+    "precoMin": 500,
+    "precoMax": 700,
+    "localizacao": "Belo Horizonte/MG",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/125041/intel-xeon-w2123-processor-8-25m-cache-3-60-ghz/specifications.html"
+  },
+  {
+    "id": 59,
+    "nome": "Memória RAM 16GB DDR3 1600MHz ECC (Servidor)",
+    "tipo": "RAM",
+    "precoMin": 120,
+    "precoMax": 180,
+    "localizacao": "Rio de Janeiro/RJ",
+    "link": "https://pt.wikipedia.org/wiki/Mem%C3%B3ria_ECC"
+  },
+  {
+    "id": 60,
+    "nome": "Placa-Mãe H81 (LGA 1150)",
+    "tipo": "Placa-Mãe",
+    "precoMin": 250,
+    "precoMax": 350,
+    "localizacao": "Salvador/BA",
+    "link": "https://www.intel.com.br/content/www/br/pt/products/sku/75016/intel-h81-chipset/specifications.html"
+  },
+  {
+    "id": 61,
+    "nome": "Intel Xeon E5-2667 v4 (Usado)",
+    "tipo": "CPU",
+    "precoMin": 350,
+    "precoMax": 500,
+    "localizacao": "São Paulo/SP",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/91753/intel-xeon-processor-e52667-v4-25m-cache-3-20-ghz/specifications.html"
+  },
+  {
+    "id": 62,
+    "nome": "Intel Xeon E5-2690 v4 (Usado)",
+    "tipo": "CPU",
+    "precoMin": 450,
+    "precoMax": 650,
+    "localizacao": "Curitiba/PR",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/91768/intel-xeon-processor-e52690-v4-35m-cache-2-60-ghz/specifications.html"
+  },
+  {
+    "id": 63,
+    "nome": "Intel Xeon E5-2680 v4 (Usado)",
+    "tipo": "CPU",
+    "precoMin": 300,
+    "precoMax": 450,
+    "localizacao": "Belo Horizonte/MG",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/91754/intel-xeon-processor-e52680-v4-35m-cache-2-40-ghz/specifications.html"
+  },
+  {
+    "id": 64,
+    "nome": "Intel Xeon E5-2699 v4 (Usado)",
+    "tipo": "CPU",
+    "precoMin": 800,
+    "precoMax": 1200,
+    "localizacao": "Rio de Janeiro/RJ",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/91317/intel-xeon-processor-e52699-v4-55m-cache-2-20-ghz/specifications.html"
+  },
+  {
+    "id": 65,
+    "nome": "Intel Xeon E5-2650 v4 (Usado)",
+    "tipo": "CPU",
+    "precoMin": 200,
+    "precoMax": 300,
+    "localizacao": "Salvador/BA",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/91767/intel-xeon-processor-e52650-v4-30m-cache-2-20-ghz/specifications.html"
+  },
+  {
+    "id": 66,
+    "nome": "Intel Xeon E5-2696 v4 (Usado)",
+    "tipo": "CPU",
+    "precoMin": 750,
+    "precoMax": 1100,
+    "localizacao": "Porto Alegre/RS",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/91317/intel-xeon-processor-e52699-v4-55m-cache-2-20-ghz/specifications.html"
+  },
+  {
+    "id": 67,
+    "nome": "Intel Xeon E5-2640 v4 (Usado)",
+    "tipo": "CPU",
+    "precoMin": 150,
+    "precoMax": 250,
+    "localizacao": "São Paulo/SP",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/91772/intel-xeon-processor-e52640-v4-25m-cache-2-40-ghz/specifications.html"
+  },
+  {
+    "id": 68,
+    "nome": "Intel Xeon E5-2698 v4 (Usado)",
+    "tipo": "CPU",
+    "precoMin": 700,
+    "precoMax": 950,
+    "localizacao": "Curitiba/PR",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/91750/intel-xeon-processor-e52698-v4-50m-cache-2-20-ghz/specifications.html"
+  },
+  {
+    "id": 69,
+    "nome": "Intel Xeon E5-2620 v4 (Usado)",
+    "tipo": "CPU",
+    "precoMin": 80,
+    "precoMax": 150,
+    "localizacao": "Belo Horizonte/MG",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/92981/intel-xeon-processor-e52620-v4-20m-cache-2-10-ghz/specifications.html"
+  },
+  {
+    "id": 70,
+    "nome": "Intel Xeon E5-2678 v3 (Usado)",
+    "tipo": "CPU",
+    "precoMin": 180,
+    "precoMax": 280,
+    "localizacao": "Rio de Janeiro/RJ",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/81908/intel-xeon-processor-e52678-v3-30m-cache-2-50-ghz/specifications.html"
+  },
+  {
+    "id": 71,
+    "nome": "Placa-Mãe B75 (LGA 1155) (Várias Marcas)",
+    "tipo": "Placa-Mãe",
+    "precoMin": 200,
+    "precoMax": 350,
+    "localizacao": "São Paulo/SP",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/64024/intel-b75-express-chipset.html"
+  },
+  {
+    "id": 72,
+    "nome": "Placa-Mãe X299 (LGA 2066) (Várias Marcas)",
+    "tipo": "Placa-Mãe",
+    "precoMin": 900,
+    "precoMax": 1500,
+    "localizacao": "Curitiba/PR",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/121141/intel-x299-chipset.html"
+  },
+  {
+    "id": 73,
+    "nome": "Placa-Mãe B560M (LGA 1200)",
+    "tipo": "Placa-Mãe",
+    "precoMin": 500,
+    "precoMax": 700,
+    "localizacao": "Belo Horizonte/MG",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/212324/intel-b560-chipset.html"
+  },
+  {
+    "id": 74,
+    "nome": "Placa-Mãe H510M (LGA 1200)",
+    "tipo": "Placa-Mãe",
+    "precoMin": 400,
+    "precoMax": 600,
+    "localizacao": "Rio de Janeiro/RJ",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/212325/intel-h510-chipset.html"
+  },
+  {
+    "id": 75,
+    "nome": "Placa-Mãe X570 (AM4)",
+    "tipo": "Placa-Mãe",
+    "precoMin": 900,
+    "precoMax": 1500,
+    "localizacao": "Salvador/BA",
+    "link": "https://www.amd.com/en/chipsets/x570"
+  },
+  {
+    "id": 76,
+    "nome": "Placa-Mãe B760M (LGA 1700)",
+    "tipo": "Placa-Mãe",
+    "precoMin": 700,
+    "precoMax": 1100,
+    "localizacao": "Porto Alegre/RS",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/230404/intel-b760-chipset.html"
+  },
+  {
+    "id": 77,
+    "nome": "Placa-Mãe A520M (AM4)",
+    "tipo": "Placa-Mãe",
+    "precoMin": 350,
+    "precoMax": 500,
+    "localizacao": "São Paulo/SP",
+    "link": "https://www.amd.com/en/chipsets/a520"
+  },
+  {
+    "id": 78,
+    "nome": "Placa-Mãe A620M (AM5)",
+    "tipo": "Placa-Mãe",
+    "precoMin": 600,
+    "precoMax": 850,
+    "localizacao": "Curitiba/PR",
+    "link": "https://www.amd.com/en/chipsets/a620"
+  },
+  {
+    "id": 79,
+    "nome": "Placa-Mãe H410M (LGA 1200)",
+    "tipo": "Placa-Mãe",
+    "precoMin": 350,
+    "precoMax": 500,
+    "localizacao": "Belo Horizonte/MG",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/201834/intel-h410-chipset.html"
+  },
+  {
+    "id": 80,
+    "nome": "Placa-Mãe Z690 (LGA 1700)",
+    "tipo": "Placa-Mãe",
+    "precoMin": 1200,
+    "precoMax": 2000,
+    "localizacao": "Rio de Janeiro/RJ",
+    "link": "https://www.intel.com/content/www/us/en/products/sku/133336/intel-z690-chipset.html"
+  }
+]

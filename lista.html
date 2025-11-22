@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Avaliação do PC (Simulação)</title>
+    <link rel="stylesheet" href="lista.css">
+</head>
+<body>
+<div class="container">
+    <h1>Avaliação da Lista de Componentes do PC</h1>
+    <p>Simulação da API de gerenciamento de peças rodando em `http://localhost:3000`.</p>
+
+    <h2>Adicionar Nova Peça</h2>
+    <form id="peca-form">
+        <input type="hidden" id="peca-id">
+        <input type="text" id="nome" placeholder="Nome da Peça (Ex: RTX 4070 Ti)" required>
+        <input type="text" id="tipo" placeholder="Tipo (Ex: GPU, CPU, RAM)" required>
+        <input type="number" id="precoMin" placeholder="Preço Min (R$)" step="0.01" min="0">
+        <input type="number" id="precoMax" placeholder="Preço Máx (R$)" step="0.01" min="0">
+        <button type="submit" id="submit-button">Adicionar Peça</button>
+        <button type="button" id="cancel-edit">Cancelar Edição</button>
+    </form>
+
+    <div class="total-summary">
+        <h3>Resumo da Avaliação</h3>
+        <p>Valor Total de Mercado Atual (Médio): R$ <span id="total-atual">0.00</span></p>
+        <p>Preço de Venda Mínimo Estimado (Revenda): R$ <span id="total-revenda">0.00</span></p>
+    </div>
+    <div class="list-actions">
+        <button id="print-button">🖨️ Imprimir Lista</button>
+        <button id="clear-button">🗑️ Limpar Lista Completa</button>
+    </div>
+
+    <h2>Minha Lista de Peças</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome da Peça</th>
+            <th>Tipo</th>
+            <th>Preço Mínimo (R$)</th>
+            <th>Preço Máximo (R$)</th>
+            <th>Valor Atual (R$)</th>
+            <th>Revenda Est. (R$)</th>
+            <th>Pesquisar Preço</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody id="lista-corpo">
+        </tbody>
+    </table>
+
+    <div id="chat-crud-container">
+        <div id="chat-crud-header">
+        Gerenciador de Lista por Chat (Clique para fechar)
+    </div>
+        <div id="chat-crud-messages">
+        </div>
+        <form id="chat-crud-form">
+            <input type="text" id="chat-crud-input" placeholder="Adicionar, editar ou remover item...">
+            <button type="submit" id="chat-crud-button">Mudar</button>
+    </form>
+</div>
+    <button id="chat-crud-toggle">Abrir Chat CRUD</button>
+
+</div>
+   
+
+<script src="lista.js"></script>
+
+</body>
+</html>
