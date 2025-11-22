@@ -177,59 +177,59 @@ async function excluirPeca(id) {
 // --- LÓGICA DO CHAT CRUD (Removido o fetch para a API do Gemini) ---
 
 // Apenas a lógica de toggle do chat permanece (O CRUD em si não funcionará sem o Gemini)
-const chatCrudContainer = document.getElementById('chat-crud-container');
-const chatCrudToggle = document.getElementById('chat-crud-toggle');
-const chatCrudHeader = document.getElementById('chat-crud-header');
+// const chatCrudContainer = document.getElementById('chat-crud-container');
+// const chatCrudToggle = document.getElementById('chat-crud-toggle');
+// const chatCrudHeader = document.getElementById('chat-crud-header');
 
-// Inicia o chat aberto
-chatCrudContainer.style.display = 'flex';
-chatCrudToggle.style.display = 'none';
+// // Inicia o chat aberto
+// chatCrudContainer.style.display = 'flex';
+// chatCrudToggle.style.display = 'none';
 
-chatCrudHeader.addEventListener('click', () => {
-    chatCrudContainer.style.display = 'none';
-    chatCrudToggle.style.display = 'block';
-});
+// chatCrudHeader.addEventListener('click', () => {
+//     chatCrudContainer.style.display = 'none';
+//     chatCrudToggle.style.display = 'block';
+// });
 
-chatCrudToggle.addEventListener('click', () => {
-    chatCrudContainer.style.display = 'flex';
-    chatCrudToggle.style.display = 'none';
-});
+// chatCrudToggle.addEventListener('click', () => {
+//     chatCrudContainer.style.display = 'flex';
+//     chatCrudToggle.style.display = 'none';
+// });
 
-// Opcional: Adiciona um aviso de que o chat CRUD está desativado no modo estático
-function adicionarCrudMessage(sender, responseData) { 
-    const chatMessages = document.getElementById('chat-crud-messages');
-    const text = (typeof responseData === 'string' ? responseData : responseData.response || '');
-    // ... (código para renderizar a mensagem) ...
-    // Simplificado para o contexto do estático
-    const div = document.createElement('div');
-    div.style.marginBottom = '10px';
-    div.style.textAlign = (sender === 'user' ? 'right' : 'left');
-    const span = document.createElement('span');
-    span.style.padding = '8px';
-    span.style.borderRadius = '12px';
-    span.style.maxWidth = '80%';
-    span.style.backgroundColor = (sender === 'user' ? '#dc3545' : '#f8d7da');
-    span.style.color = (sender === 'user' ? 'white' : '#333');
-    span.innerHTML = text.replace(/\n/g, '<br>');
-    div.appendChild(span);
-    chatMessages.appendChild(div);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
+// // Opcional: Adiciona um aviso de que o chat CRUD está desativado no modo estático
+// function adicionarCrudMessage(sender, responseData) { 
+//     const chatMessages = document.getElementById('chat-crud-messages');
+//     const text = (typeof responseData === 'string' ? responseData : responseData.response || '');
+//     // ... (código para renderizar a mensagem) ...
+//     // Simplificado para o contexto do estático
+//     const div = document.createElement('div');
+//     div.style.marginBottom = '10px';
+//     div.style.textAlign = (sender === 'user' ? 'right' : 'left');
+//     const span = document.createElement('span');
+//     span.style.padding = '8px';
+//     span.style.borderRadius = '12px';
+//     span.style.maxWidth = '80%';
+//     span.style.backgroundColor = (sender === 'user' ? '#dc3545' : '#f8d7da');
+//     span.style.color = (sender === 'user' ? 'white' : '#333');
+//     span.innerHTML = text.replace(/\n/g, '<br>');
+//     div.appendChild(span);
+//     chatMessages.appendChild(div);
+//     chatMessages.scrollTop = chatMessages.scrollHeight;
+// }
 
-document.getElementById('chat-crud-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const input = document.getElementById('chat-crud-input');
-    const userMessage = input.value.trim();
-    input.value = '';
-    if (!userMessage) return;
+// document.getElementById('chat-crud-form').addEventListener('submit', function(e) {
+//     e.preventDefault();
+//     const input = document.getElementById('chat-crud-input');
+//     const userMessage = input.value.trim();
+//     input.value = '';
+//     if (!userMessage) return;
 
-    adicionarCrudMessage('user', userMessage);
+//     adicionarCrudMessage('user', userMessage);
     
-    // SIMULAÇÃO: O chat CRUD não funciona no modo estático
-    setTimeout(() => {
-        adicionarCrudMessage('gemini', '❌ Este chat de gerenciamento está desativado no modo estático do projeto. Use o formulário acima para adicionar e editar peças. O ID do MongoDB (final 4 dígitos) não é usado aqui.');
-    }, 500);
-});
+//     // SIMULAÇÃO: O chat CRUD não funciona no modo estático
+//     setTimeout(() => {
+//         adicionarCrudMessage('gemini', '❌ Este chat de gerenciamento está desativado no modo estático do projeto. Use o formulário acima para adicionar e editar peças. O ID do MongoDB (final 4 dígitos) não é usado aqui.');
+//     }, 500);
+// });
 
 // --- LÓGICA DOS NOVOS BOTÕES ---
 
@@ -253,7 +253,7 @@ document.getElementById('print-button').addEventListener('click', () => {
 // --- Inicialização ---
 
 // Mensagem inicial no chat CRUD (Aviso de desativação)
-adicionarCrudMessage('gemini', "🚨 Aviso: O chat CRUD está desativado no modo estático. Use o formulário manual acima.");
+// adicionarCrudMessage('gemini', "🚨 Aviso: O chat CRUD está desativado no modo estático. Use o formulário manual acima.");
 
 // Inicia o carregamento da lista
 carregarPecas();
