@@ -10,6 +10,7 @@ localStorage.removeItem('setupPecas');
 
 // Variável para armazenar a base de dados do data.json
 let STATIC_KNOWLEDGE = [];
+let CITIES_LIST = []; // Nova variável para guardar a lista de cidades
 
 let CONVERSATION_STATE = {
     step: 'get_location', // Estado inicial
@@ -32,8 +33,21 @@ async function loadStaticKnowledge() {
     }
 }
 
+// Função para carregar a lista de cidades do IBGE
+async function loadCitiesList() {
+    try {
+        const response = await fetch(IBGE_CITIES_URL);
+        if (!response.ok) throw new Error('Falha ao carregar lista de cidades do IBGE.');
+        CITIES_LIST = await response.json();
+        console.log(`Lista de cidades carregada: ${CITIES_LIST.length} municípios.`);
+    } catch (error) {
+        console.error("Erro ao carregar lista de cidades:", error);
+    }
+}
+
 // Inicia o carregamento da base de dados estática
 loadStaticKnowledge();
+loadCitiesList(); // Inicia o carregamento da lista de cidades
 
 // Função que adiciona a mensagem ao DOM
 function adicionarMensagem(sender, text) {
@@ -100,21 +114,14 @@ async function processUserMessage(userMessage) {
     // --- ETAPA 1: OBTENÇÃO DA LOCALIZAÇÃO ---
     if (CONVERSATION_STATE.step === 'get_location') {
 
-        const loadingMessageElement = adicionarMensagem('gemini', 'Verificando localização...');
-
-        try {
-            const citiesResponse = await fetch(IBGE_CITIES_URL);
-            const cities = await citiesResponse.json();
-
-            // Tenta encontrar a cidade ou estado do usuário
-            const foundCity = cities.find(c =>
-                c.nome.toLowerCase() === userMessage.toLowerCase() ||
-                (c.municipio && c.municipio.nome.toLowerCase() === userMessage.toLowerCase()) ||
-                (c.microrregiao && c.microrregiao.mesorregiao.UF.nome.toLowerCase().includes(userMessage.toLowerCase()))
-            );
-
-            loadingMessageElement.remove();
-
+        // A lógica de busca agora é mais simples, pois o autocomplete ajuda
+        const foundCity = CITIES_LIST.find(c => {
+            const userLocation = userMessage.toLowerCase();
+            const cityName = c.nome.toLowerCase();
+            const stateName = c.microrregiao.mesorregiao.UF.nome.toLowerCase();
+            const stateSigla = c.microrregiao.mesorregiao.UF.sigla.toLowerCase();
+            return `${cityName}/${stateSigla}` === userLocation || cityName === userLocation || stateName === userLocation;
+        });
             if (foundCity) {
                 const uf = foundCity.microrregiao.mesorregiao.UF.sigla;
                 const nomeCidade = foundCity.nome || foundCity.municipio.nome;
@@ -127,11 +134,6 @@ async function processUserMessage(userMessage) {
             } else {
                 responseText = "❌ Não consegui confirmar essa localização. Por favor, tente novamente digitando o nome completo da sua cidade e estado (Ex: <strong>São Paulo/SP</strong>).";
             }
-        } catch (error) {
-            loadingMessageElement.remove();
-            console.error("Erro ao buscar API do IBGE:", error);
-            responseText = "Desculpe, a busca por cidades falhou. Por favor, insira o nome da sua cidade/estado para continuarmos.";
-        }
     }
 
     // --- ETAPA 2: OBTENÇÃO E BUSCA DE PEÇAS ---
@@ -243,6 +245,70 @@ async function processUserMessage(userMessage) {
     }
 }
 // --- FIM DA FUNÇÃO PRINCIPAL ---
+
+// --- LÓGICA DE AUTOCOMPLETE PARA O CHAT ---
+const chatInput = document.getElementById('chat-input');
+const autocompleteList = document.getElementById('autocomplete-list');
+
+chatInput.addEventListener('input', function() {
+    const valorInput = this.value;
+    autocompleteList.innerHTML = ''; // Limpa a lista anterior
+
+    if (!valorInput || valorInput.length < 2) { // Reduzido para 2 caracteres
+        return false;
+    }
+
+    let sugestoes = [];
+
+    // Mostra sugestões de CIDADES
+    if (CONVERSATION_STATE.step === 'get_location') {
+        sugestoes = CITIES_LIST.filter(cidade =>
+            cidade.nome.toLowerCase().startsWith(valorInput.toLowerCase())
+        ).slice(0, 50); // Limita a 50 resultados para performance
+
+        sugestoes.forEach(cidade => {
+            const itemDiv = document.createElement('div');
+            const nomeCidade = cidade.nome;
+            const uf = cidade.microrregiao.mesorregiao.UF.sigla;
+            itemDiv.innerHTML = `<strong>${nomeCidade}</strong>/${uf}`;
+            
+            itemDiv.addEventListener('click', function() {
+                chatInput.value = `${nomeCidade}/${uf}`;
+                autocompleteList.innerHTML = '';
+                document.getElementById('chat-form').requestSubmit(); // Envia o formulário
+            });
+            autocompleteList.appendChild(itemDiv);
+        });
+    }
+    // Mostra sugestões de PEÇAS
+    else if (CONVERSATION_STATE.step === 'get_pecas') {
+        // Busca mais flexível, ignorando espaços e hifens
+        const normalizedInput = valorInput.toLowerCase().replace(/[\s-]+/g, '');
+        sugestoes = STATIC_KNOWLEDGE.filter(peca => 
+            peca.nome.toLowerCase().replace(/[\s-]+/g, '').includes(normalizedInput)
+        );
+
+        sugestoes.forEach(peca => {
+            const itemDiv = document.createElement('div');
+            itemDiv.innerHTML = `<strong>${peca.nome}</strong> (${peca.tipo})`;
+            
+            itemDiv.addEventListener('click', function() {
+                chatInput.value = peca.nome;
+                autocompleteList.innerHTML = '';
+                document.getElementById('chat-form').requestSubmit(); // Envia o formulário
+            });
+            autocompleteList.appendChild(itemDiv);
+        });
+    }
+});
+
+// Fecha a lista de autocomplete se o usuário clicar fora dela
+document.addEventListener('click', function (e) {
+    // Verifica se o clique não foi no input nem na lista
+    if (e.target !== chatInput && !autocompleteList.contains(e.target)) {
+        autocompleteList.innerHTML = '';
+    }
+});
 
 
 // Função que lida com o envio do formulário
