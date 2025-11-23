@@ -15,7 +15,10 @@
         </div>
     </div>
     <form id="chat-form">
-        <input type="text" id="chat-input" placeholder="Digite sua mensagem aqui..." required>
+        <div class="autocomplete-container">
+            <input type="text" id="chat-input" placeholder="Digite sua mensagem aqui..." required autocomplete="off">
+            <div id="autocomplete-list" class="autocomplete-items"></div>
+        </div>
         <button type="submit">Enviar</button>
     </form>
 </div>
