@@ -2,6 +2,7 @@
 const DATA_FILE_URL = 'data.json';
 
 // Inicializando a Variável Global para armazenar a lista de peças atual
+let baseDeConhecimentoCompleta = [];
 let listaPecasAtual = [];
 
 // --- FUNÇÃO DE PERSISTÊNCIA ---
@@ -19,6 +20,18 @@ function calcularTotais(pecas) {
 
     const totalRevenda = totalAtual * 0.8; 
     return { totalAtual, totalRevenda };
+}
+
+// Função para carregar a base de conhecimento completa para o autocomplete
+async function carregarBaseDeConhecimento() {
+    try {
+        const response = await fetch(DATA_FILE_URL);
+        if (!response.ok) throw new Error('Falha ao carregar data.json para autocomplete.');
+        baseDeConhecimentoCompleta = await response.json();
+        console.log('Base de conhecimento para autocomplete carregada.');
+    } catch (error) {
+        console.error('Não foi possível carregar a base de conhecimento:', error);
+    }
 }
 
 // Função para carregar e renderizar a lista
@@ -72,7 +85,11 @@ async function carregarPecas() {
         if (!peca.id) peca.id = Date.now().toString() + index; 
         
         const tr = document.createElement('tr');
-        const searchUrl = `https://www.google.com/search?tbm=shop&q=${encodeURIComponent(peca.nome)}`;
+        
+        // Se a peça tiver um link específico, use-o. Senão, use a busca do Google.
+        const searchUrl = (peca.link && peca.link.trim() !== '') 
+            ? peca.link 
+            : `https://www.google.com/search?tbm=shop&q=${encodeURIComponent(peca.nome)}`;
         
         // Calcula os valores estimados localmente (já que o server não faz mais isso)
         const valorAtual = ((peca.precoMin + peca.precoMax) / 2).toFixed(2);
@@ -117,7 +134,8 @@ document.getElementById('peca-form').addEventListener('submit', async function(e
                 tipo,
                 precoMin,
                 precoMax,
-                link };
+                link
+            };
         }
 
     // 2. MODO DE ADIÇÃO
@@ -153,7 +171,7 @@ function editarPeca(id) {
     document.getElementById('tipo').value = peca.tipo;
     document.getElementById('precoMin').value = peca.precoMin;
     document.getElementById('precoMax').value = peca.precoMax;
-    document.getElementById('link').value = peca.link || ''; // Preenche o campo de link
+    document.getElementById('link').value = peca.link || '';
 
     document.getElementById('submit-button').textContent = 'Salvar Edição';
     document.getElementById('cancel-edit').style.display = 'inline';
@@ -181,6 +199,52 @@ async function excluirPeca(id) {
     savePecas(); // Salva a lista atualizada
     carregarPecas(); // Recarrega a lista
 }
+
+// --- LÓGICA DE AUTOCOMPLETE ---
+const nomeInput = document.getElementById('nome');
+const autocompleteList = document.getElementById('autocomplete-list');
+
+nomeInput.addEventListener('input', function() {
+    const valorInput = this.value;
+    autocompleteList.innerHTML = ''; // Limpa a lista anterior
+
+    if (!valorInput) {
+        return false;
+    }
+
+    // Filtra a base de conhecimento
+    const sugestoes = baseDeConhecimentoCompleta.filter(peca =>
+        peca.nome.toLowerCase().includes(valorInput.toLowerCase())
+    );
+
+    // Cria os itens da lista de sugestões
+    sugestoes.forEach(peca => {
+        const itemDiv = document.createElement('div');
+        itemDiv.innerHTML = `<strong>${peca.nome}</strong> (${peca.tipo})`;
+        
+        // Adiciona um evento de clique para preencher o formulário
+        itemDiv.addEventListener('click', function() {
+            document.getElementById('nome').value = peca.nome;
+            document.getElementById('tipo').value = peca.tipo;
+            document.getElementById('precoMin').value = peca.precoMin;
+            document.getElementById('precoMax').value = peca.precoMax;
+            document.getElementById('link').value = peca.link || '';
+            
+            // Limpa a lista de sugestões após a seleção
+            autocompleteList.innerHTML = '';
+        });
+
+        autocompleteList.appendChild(itemDiv);
+    });
+});
+
+// Fecha a lista de autocomplete se o usuário clicar fora dela
+document.addEventListener('click', function (e) {
+    if (e.target !== nomeInput) {
+        autocompleteList.innerHTML = '';
+    }
+});
+
 
 // --- LÓGICA DO CHAT CRUD (Removido o fetch para a API do Gemini) ---
 
@@ -264,4 +328,7 @@ document.getElementById('print-button').addEventListener('click', () => {
 // adicionarCrudMessage('gemini', "🚨 Aviso: O chat CRUD está desativado no modo estático. Use o formulário manual acima.");
 
 // Inicia o carregamento da lista
-carregarPecas();
+document.addEventListener('DOMContentLoaded', () => {
+    carregarBaseDeConhecimento(); // Carrega a base para o autocomplete
+    carregarPecas(); // Carrega a lista de peças do usuário
+});
