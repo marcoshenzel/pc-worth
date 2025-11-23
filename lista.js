@@ -208,13 +208,14 @@ nomeInput.addEventListener('input', function() {
     const valorInput = this.value;
     autocompleteList.innerHTML = ''; // Limpa a lista anterior
 
-    if (!valorInput) {
+    if (!valorInput || valorInput.length < 2) { // Reduzido para 2 caracteres
         return false;
     }
 
-    // Filtra a base de conhecimento
-    const sugestoes = baseDeConhecimentoCompleta.filter(peca =>
-        peca.nome.toLowerCase().includes(valorInput.toLowerCase())
+    // Busca mais flexível, ignorando espaços e hifens
+    const normalizedInput = valorInput.toLowerCase().replace(/[\s-]+/g, '');
+    const sugestoes = baseDeConhecimentoCompleta.filter(peca => 
+        peca.nome.toLowerCase().replace(/[\s-]+/g, '').includes(normalizedInput)
     );
 
     // Cria os itens da lista de sugestões
