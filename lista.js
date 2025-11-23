@@ -80,6 +80,7 @@ async function carregarPecas() {
     document.getElementById('total-atual').textContent = totalAtual.toFixed(2);
     document.getElementById('total-revenda').textContent = totalRevenda.toFixed(2);
 
+    // Renderiza cada peça na tabela
     listaPecasAtual.forEach((peca, index) => {
         // Garante que a peça tem um ID único. Usaremos um timestamp/string simples no estático
         if (!peca.id) peca.id = Date.now().toString() + index; 
@@ -313,8 +314,13 @@ document.getElementById('clear-button').addEventListener('click', () => {
     }
     // Limpa o array global e o localStorage
     listaPecasAtual = [];
-    localStorage.removeItem('pecasList');
-    carregarPecas();
+    savePecas(); // Salva a lista vazia no localStorage
+
+    // Limpa a tabela e zera os totais diretamente na interface
+    document.getElementById('lista-corpo').innerHTML = '';
+    document.getElementById('total-atual').textContent = '0.00';
+    document.getElementById('total-revenda').textContent = '0.00';
+
     alert('Lista de peças limpa com sucesso!');
 });
 
