@@ -177,12 +177,14 @@ async function processUserMessage(userMessage) {
             const max = min + Math.floor(Math.random() * 800);
 
             const novaPeca = {
-                id: Date.now().toString() + CONVERSATION_STATE.pecas.length, // ID único simples
+                id: Date.now().toString() + CONVERSATION_STATE.pecas.length,
                 nome: pecaNome.charAt(0).toUpperCase() + pecaNome.slice(1),
                 tipo: tipo,
                 precoMin: min,
                 precoMax: max,
-                localizacao: CONVERSATION_STATE.location
+                localizacao: CONVERSATION_STATE.location,
+                // CORREÇÃO AQUI: Gera o link do Google Shopping se não houver link específico
+                link: `https://www.google.com/search?tbm=shop&q=${encodeURIComponent(pecaNome.charAt(0).toUpperCase() + pecaNome.slice(1))}`
             };
 
             CONVERSATION_STATE.pecas.push(novaPeca);
